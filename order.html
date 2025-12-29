@@ -2,25 +2,28 @@
 <html>
 <head>
     <title>Order Blood</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Order Blood Request</h1>
+
+<div class="container">
+    <h1>Order Blood</h1>
 
     <p><strong>Blood Bank:</strong> City Blood Bank</p>
     <p><strong>Blood Group:</strong> O+</p>
 
-    <form>
-        <label>Required Units:</label><br>
-        <input type="number"><br><br>
+    <label>Required Units</label>
+    <input type="number">
 
-        <label>Hospital Name:</label><br>
-        <input type="text"><br><br>
+    <label>Hospital Name</label>
+    <input type="text">
 
-        <button>Send Request (WhatsApp)</button>
-    </form>
+    <button>Send WhatsApp Request</button>
 
-    <p><i>Note: WhatsApp integration will be added later.</i></p>
+    <p style="font-size: 12px; color: gray;">
+        WhatsApp integration will be added in backend.
+    </p>
+</div>
 
-    <a href="blood-banks.html">Back</a>
 </body>
 </html>

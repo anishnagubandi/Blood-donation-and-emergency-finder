@@ -2,39 +2,36 @@
 <html>
 <head>
     <title>Blood Banks</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Available Blood Banks</h1>
 
-    <table border="1" width="100%">
+<nav>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="search-blood.html">Search</a>
+</nav>
+
+<div class="container" style="width: 700px;">
+    <h1>Blood Banks</h1>
+
+    <table>
         <tr>
-            <th>Blood Bank Name</th>
-            <th>Blood Group</th>
-            <th>Units Available</th>
+            <th>Name</th>
+            <th>Blood</th>
+            <th>Units</th>
             <th>Action</th>
         </tr>
-
         <tr>
             <td>City Blood Bank</td>
             <td>O+</td>
-            <td>5 Units</td>
+            <td>5</td>
             <td>
-                <a href="order.html">Order</a> |
-                <a href="https://maps.google.com" target="_blank">Directions</a>
-            </td>
-        </tr>
-
-        <tr>
-            <td>LifeCare Blood Center</td>
-            <td>O+</td>
-            <td>2 Units</td>
-            <td>
-                <a href="https://maps.google.com" target="_blank">Directions</a>
+                <a class="link-btn" href="order.html">Order</a> |
+                <a class="link-btn" href="https://maps.google.com" target="_blank">Map</a>
             </td>
         </tr>
     </table>
+</div>
 
-    <br>
-    <a href="search-blood.html">Back to Search</a>
 </body>
 </html>

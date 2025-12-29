@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login - Blood Service</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Blood Availability System</h1>
 
-    <form>
-        <label>Login As:</label><br>
-        <select>
-            <option>Hospital</option>
-            <option>Blood Bank</option>
-            <option>Delivery Partner</option>
-        </select><br><br>
+<div class="container">
+    <h1>Blood Service Login</h1>
 
-        <label>Email / ID:</label><br>
-        <input type="text"><br><br>
+    <label>Login As</label>
+    <select>
+        <option>Hospital</option>
+        <option>Blood Bank</option>
+        <option>Delivery Partner</option>
+    </select>
 
-        <label>Password:</label><br>
-        <input type="password"><br><br>
+    <label>Email / ID</label>
+    <input type="text">
 
-        <button>Login</button>
-    </form>
+    <label>Password</label>
+    <input type="password">
 
-    <p><a href="dashboard.html">Skip Login (Emergency View)</a></p>
+    <button>Login</button>
+
+    <p style="text-align:center;">
+        <a class="link-btn" href="dashboard.html">Emergency Access</a>
+    </p>
+</div>
+
 </body>
 </html>
