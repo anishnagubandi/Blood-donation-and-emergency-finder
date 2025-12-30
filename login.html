@@ -6,28 +6,85 @@
 </head>
 <body>
 
-<div class="container">
-    <h1>Blood Service Login</h1>
+    <div class="container">
+        <h1>Blood Service Login</h1>
 
-    <label>Login As</label>
-    <select>
-        <option>Hospital</option>
-        <option>Blood Bank</option>
-        <option>Delivery Partner</option>
-    </select>
+        <label>Login As</label>
+        <select id="customerId">
+            <option>Hospital</option>
+            <option>Blood Bank</option>
+            <option>Delivery Partner</option>
+        </select>
 
-    <label>Email / ID</label>
-    <input type="text">
+        <label>Email / ID</label>
+        <input type="text" id="emailId">
 
-    <label>Password</label>
-    <input type="password">
+        <label>Password</label>
+        <input type="password" id="passwordId">
 
-    <button>Login</button>
+        <button onclick="proceedWithLogin()">Login</button>
 
-    <p style="text-align:center;">
-        <a class="link-btn" href="dashboard.html">Emergency Access</a>
-    </p>
-</div>
+        <p style="text-align:center;">
+            <a class="link-btn" href="dashboard.html">Emergency Access</a>
+        </p>
+    </div>
 
+
+    <script>
+        let idCounter=0;//to give special id's to hospitals.
+        function proceedWithLogin(){
+            // ADD .value to get the actual values, not the elements
+            const customerType = document.getElementById('customerId').value;
+            const emailId = document.getElementById('emailId').value;
+            const password = document.getElementById('passwordId').value;
+
+            // Check if all fields are filled
+            if (!emailId || !password) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            if(customerType === 'Hospital'){
+                const hospital = {
+                    hospitalId: idCounter++,
+                    emailId: emailId,
+                    password: password
+                };
+                //load the data
+                const hospitals=JSON.parse(localStorage.getItem('hospitals')) || [];
+                
+                let hospitalExists=false;
+                let hospitalLoggedIn=false;
+
+                hospitals.forEach((element)=>{
+                    if(hospital.emailId===element.emailId){
+                        hospitalExists=true;
+                        if(hospital.password===element.password)hospitalLoggedIn=true;
+                    }
+                })
+                if(!hospitalExists){
+                     hospitals.push(hospital);
+                     alert('Hospital registered successfully!');
+                }
+               
+
+                localStorage.setItem('hospitals',JSON.stringify(hospitals)); //to save data to localStorage.
+                
+                console.log(hospitals);
+                
+                if(hospitalLoggedIn){
+                // Redirect to dashboard after successful registration
+                alert('Hospital logged in successfully!');
+                window.location.href = 'dashboard.html';
+                }
+                else{
+                    alert('Please fill in the correct password');
+                    return;
+                }
+            } 
+                
+            
+        }
+    </script>
 </body>
 </html>
